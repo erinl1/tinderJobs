@@ -8,6 +8,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.integer :phonenum
       t.text :resume
 
+      t.belongs_to :jobs
       t.timestamps
     end
   end
