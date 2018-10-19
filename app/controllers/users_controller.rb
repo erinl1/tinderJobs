@@ -10,9 +10,8 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    user = User.find(params[:id])
-    jobs = Job.where(id: user.jobs_id)
-    @companies = Company.where(jobs_id: jobs.ids)
+    @user = User.find(params[:id])
+    #@jobs = Job.where(id: user.jobs_id)
   end
 
   # GET /users/new

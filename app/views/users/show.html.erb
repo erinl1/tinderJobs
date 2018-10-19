@@ -27,9 +27,15 @@
 
 <p>
   <strong>Possible Companies:</strong> <br>
-    <% @companies.each do |company| %>
-      <%= company.name %>
-      <%= company.location %>
+    <% jobs = Job.where(id: @user.jobs_id) %>
+    <% jobs.each do |job| %>
+      For: <%= job.name %>: <%= job.description %> <br>
+      <% companies = Company.where(jobs_id: job.id) %>
+      <% companies.each do |company| %>
+        <%= company.name %> <br>
+        <%= company.location %> <br>
+      <% end %>
+      <br>
     <% end %>
 </p>
 <%= link_to 'Edit', edit_user_path(@user) %> |
