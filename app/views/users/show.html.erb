@@ -25,5 +25,16 @@
   <%= @user.resume %>
 </p>
 
+<p>
+  <strong>Possible Companies:</strong>
+  <%= @jobs %>
+   <% @jobs.each do |job| %>
+    <%= job.id %>
+    <%= @companies = Company.where(job_id: job.id) %>
+    <%= @campanies.each do |company| %>
+        <%= company %>
+      <% end %>
+    <% end %>
+</p>
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

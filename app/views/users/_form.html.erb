@@ -11,30 +11,33 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
+  <span class="input"></span>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
 
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-  </div>
+  <span class="input"></span>
+  <%= form.label :email %>
+  <%= form.email_field :email %>
+  
+  <span class="input"></span>
+  <%= form.label :password %>
+  <%= form.text_field :password %>
 
-  <div class="field">
-    <%= form.label :age %>
-    <%= form.number_field :age %>
-  </div>
+  <span class="input"></span>
+  <%= form.label :age %>
+  <%= form.number_field :age %>
 
-  <div class="field">
-    <%= form.label :phonenum %>
-    <%= form.number_field :phonenum %>
-  </div>
+  <span class="input"></span>
+  <%= form.label :phonenum %>
+  <%= form.phone_field :phonenum %>
 
-  <div class="field">
-    <%= form.label :resume %>
-    <%= form.text_area :resume %>
-  </div>
+  <span class="input"></span>
+  <%= form.label :job %><br>
+  <%= form.select :job, Job.all%>
+  
+  <span class="input"></span>
+  <%= form.label :resume %><br>
+  <%= form.text_area :resume %>
 
   <div class="actions">
     <%= form.submit %>

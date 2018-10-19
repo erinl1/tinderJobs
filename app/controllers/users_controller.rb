@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-
+  layout "usernew",  only: [:new, :edit]
   # GET /users
   # GET /users.json
   def index
@@ -10,6 +10,9 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    user = User.find(params[:id])
+    jobs = user.jobs
+    @companies = Company.where(id: jobs.company_ids)
   end
 
   # GET /users/new
@@ -69,6 +72,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :email, :age, :phonenum, :resume)
+      params.require(:user).permit(:name, :email, :password, :age, :phonenum, :resume)
     end
 end
