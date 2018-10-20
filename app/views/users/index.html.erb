@@ -1,9 +1,8 @@
 <div class = 'container'>
 <p id="notice"><%= notice %></p>
+<center><h1 style = 'color: black'>Users</h1></center>
 
-<h1>Users</h1>
-
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Name</th>
@@ -21,7 +20,7 @@
       <tr>
         <td><%= user.name %></td>
         <td><%= user.email %></td>
-
+        <td><%= user.password %></td>
         <td><%= user.age %></td>
         <td><%= user.phonenum %></td>
         <td><%= user.resume %></td>
