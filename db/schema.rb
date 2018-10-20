@@ -14,6 +14,7 @@ ActiveRecord::Schema.define(version: 2018_10_13_002317) do
 
   create_table "companies", force: :cascade do |t|
     t.string "name"
+    t.string "type"
     t.string "location"
     t.integer "jobs_id"
     t.datetime "created_at", null: false
@@ -24,15 +25,14 @@ ActiveRecord::Schema.define(version: 2018_10_13_002317) do
   create_table "jobs", force: :cascade do |t|
     t.string "name"
     t.string "description"
-    t.integer "company_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["company_id"], name: "index_jobs_on_company_id"
   end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
+    t.string "password"
     t.integer "age"
     t.integer "phonenum"
     t.text "resume"
