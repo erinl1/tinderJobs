@@ -26,14 +26,16 @@
 </p>
 
 <p>
-  <strong>Possible Companies:</strong>
-  <%= @jobs %>
-   <% @jobs.each do |job| %>
-    <%= job.id %>
-    <%= @companies = Company.where(job_id: job.id) %>
-    <%= @campanies.each do |company| %>
-        <%= company %>
+  <strong>Possible Companies:</strong> <br>
+    <% jobs = Job.where(id: @user.jobs_id) %>
+    <% jobs.each do |job| %>
+      For: <%= job.name %>: <%= job.description %> <br>
+      <% companies = Company.where(jobs_id: job.id) %>
+      <% companies.each do |company| %>
+        <%= company.name %> <br>
+        <%= company.location %> <br>
       <% end %>
+      <br>
     <% end %>
 </p>
 <%= link_to 'Edit', edit_user_path(@user) %> |

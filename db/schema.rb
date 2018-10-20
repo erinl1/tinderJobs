@@ -15,8 +15,10 @@ ActiveRecord::Schema.define(version: 2018_10_13_002317) do
   create_table "companies", force: :cascade do |t|
     t.string "name"
     t.string "location"
+    t.integer "jobs_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["jobs_id"], name: "index_companies_on_jobs_id"
   end
 
   create_table "jobs", force: :cascade do |t|
@@ -34,8 +36,10 @@ ActiveRecord::Schema.define(version: 2018_10_13_002317) do
     t.integer "age"
     t.integer "phonenum"
     t.text "resume"
+    t.integer "jobs_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["jobs_id"], name: "index_users_on_jobs_id"
   end
 
 end
