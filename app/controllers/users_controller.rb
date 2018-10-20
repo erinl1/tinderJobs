@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   def show
     user = User.find(params[:id])
     jobs = user.jobs
-    @companies = Company.where(id: jobs.company_ids)
+    @companies = Company.find(id: jobs.company_ids)
   end
 
   # GET /users/new
