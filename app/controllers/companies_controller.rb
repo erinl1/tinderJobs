@@ -1,5 +1,6 @@
 class CompaniesController < ApplicationController
   before_action :set_company, only: [:show, :edit, :update, :destroy]
+    layout "usernew",  only: [:new, :edit]
 
   # GET /companies
   # GET /companies.json

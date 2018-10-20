@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :users
+  get '/users/:id/match', to: 'users#match'
   resources :companies do
     resources :jobs
   end

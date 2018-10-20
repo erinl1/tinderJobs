@@ -18,7 +18,7 @@
   <span class="input"></span>
   <%= form.label :email %>
   <%= form.email_field :email %>
-  
+
   <span class="input"></span>
   <%= form.label :password %>
   <%= form.text_field :password %>
@@ -32,9 +32,9 @@
   <%= form.phone_field :phonenum %>
 
   <span class="input"></span>
-  <%= form.label :jobs_id %><br>
-  <%= form.select :jobs_id, Job.ids%>
-  
+  <%= form.label :job %><br>
+  <%= form.select :job, Job.all %>
+
   <span class="input"></span>
   <%= form.label :resume %><br>
   <%= form.text_area :resume %>
