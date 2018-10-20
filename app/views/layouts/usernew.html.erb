@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>aifnewo</title>
+    <title>tinderJobs</title>
     <%= csp_meta_tag %>
     <%= csrf_meta_tags %>
-    
+
     <%= stylesheet_link_tag 'usernew', media: 'all' %>
     <%= javascript_include_tag :modernizr %>
-    
+
     <head>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css" type="text/css" >
       <link rel="stylesheet" href="flexboxgrid/css/flexboxgrid.min.css" type="text/css">
@@ -18,7 +18,7 @@
     <div class="row starter top-xs border" style="background:#6BABF3; color: white">
     <div class="col-sm-6 col-xs-12">
       <div class="box">
-        <a style="color: white; font-family: 'Lato'; font-size: 30px" role="button" class="btn btn-link btn-lg" href="./tinder.html"><div>fafwef</div></a> <!-- logo goes here -->
+        <%= link_to "tinderJobs", root_path, style: "color: white; font-family: 'Lato'; font-size: 30px",class: "btn btn-link btn-lg"   %>
       </div>
     </div>
     <div class="col-sm-6 col-xs-12">
@@ -27,7 +27,7 @@
       </div>
     </div>
   </div>
-    
+
     <%= yield %>
   </body>
 </html>
