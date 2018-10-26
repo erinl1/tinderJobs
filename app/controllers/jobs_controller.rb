@@ -5,26 +5,31 @@ class JobsController < ApplicationController
   # GET /jobs
   # GET /jobs.json
   def index
-    @jobs = Job.all
+    @company = Company.find(params[:company_id])
+    @jobs = Job.where(id: @company.jobs_id)
   end
 
   # GET /jobs/1
   # GET /jobs/1.json
   def show
+    @company = Company.find(params[:company_id])
   end
 
   # GET /jobs/new
   def new
+    @company = Company.find(params[:company_id])
     @job = Job.new
   end
 
   # GET /jobs/1/edit
   def edit
+    @company = Company.find(params[:company_id])
   end
 
   # POST /jobs
   # POST /jobs.json
   def create
+    @company = Company.find(params[:company_id])
     @job = Job.new(job_params)
 
     respond_to do |format|
@@ -55,6 +60,7 @@ class JobsController < ApplicationController
   # DELETE /jobs/1
   # DELETE /jobs/1.json
   def destroy
+    
     @job.destroy
     respond_to do |format|
       format.html { redirect_to jobs_url, notice: 'Job was successfully destroyed.' }
