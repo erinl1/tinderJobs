@@ -1,4 +1,16 @@
-<div class = 'container'>
+  <div class="row starter top-xs border" style="background:#6BABF3; color: white">
+    <div class="col-sm-6 col-xs-12">
+      <div class="box">
+        <%= link_to "tinderJobs", root_path, style: "color: white; font-family: 'Lato'; font-size: 30px",class: "btn btn-link btn-lg"   %>
+    </div>
+    </div>
+    <div class="col-sm-6 col-xs-12">
+      <div class="box end-xs">
+        <%= link_to "Matches", company_job_match_path(@job, @company), style: "", class: "btn btn-lg btn-warning active"   %>
+      </div>
+    </div>
+  </div>
+  <div class = 'container'>
 <p id="notice"><%= notice %></p>
 <div class = 'box'>
 <p>
@@ -11,7 +23,7 @@
   <%= @job.description %>
 </p>
 
-<%= link_to 'Edit', edit_job_path(@job) %> |
-<%= link_to 'Back', jobs_path %>
+<%= link_to 'Edit', edit_company_job_path(@job) %> |
+<%= link_to 'Back',  company_jobs_path %>
 </div>
 </div>

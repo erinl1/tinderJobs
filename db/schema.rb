@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(version: 2018_10_26_155902) do
 
   create_table "jobs", force: :cascade do |t|
     t.string "name"
-    t.string "jobtype"
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
