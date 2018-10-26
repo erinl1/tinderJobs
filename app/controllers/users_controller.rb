@@ -13,7 +13,10 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     #@jobs = Job.where(id: user.jobs_id)
   end
-
+  def match
+    @user = User.find(params[:id])
+    #@jobs = Job.where(id: user.jobs_id)
+  end
   # GET /users/new
   def new
     @user = User.new

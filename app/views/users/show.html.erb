@@ -1,3 +1,17 @@
+<div class="row starter top-xs border" style="background:#6BABF3; color: white">
+  <div class="col-sm-6 col-xs-12">
+    <div class="box">
+      <%= link_to "tinderJobs", root_path, style: "color: white; font-family: 'Lato'; font-size: 30px",class: "btn btn-link btn-lg"   %>
+  </div>
+  </div>
+  <div class="col-sm-6 col-xs-12">
+    <div class="box end-xs">
+      <%= link_to "Matches", user_match_path(@user), style: "", class: "btn btn-lg btn-warning active"   %>
+<!-- profile css goes here -->
+    </div>
+  </div>
+</div>
+<div class = 'box'>
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -40,3 +54,4 @@
 </p>
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
+</div>
