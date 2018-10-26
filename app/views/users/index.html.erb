@@ -1,3 +1,16 @@
+<div class="row starter top-xs border" style="background:#6BABF3; color: white">
+  <div class="col-sm-6 col-xs-12">
+    <div class="box">
+      <%= link_to "tinderJobs", root_path, style: "color: white; font-family: 'Lato'; font-size: 30px",class: "btn btn-link btn-lg"   %>
+  </div>
+  </div>
+  <div class="col-sm-6 col-xs-12">
+    <div class="box end-xs">
+      <%= link_to "New User", new_user_path, style: "", class: "btn btn-lg btn-warning active"   %>
+<!-- profile css goes here -->
+    </div>
+  </div>
+</div>
 <div class = 'container'>
 <p id="notice"><%= notice %></p>
 <center><h1 style = 'color: black'>Users</h1></center>
@@ -33,6 +46,4 @@
 </table>
 
 <br>
-
-<%= link_to 'New User', new_user_path %>
 </div>
