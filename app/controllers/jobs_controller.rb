@@ -17,6 +17,29 @@ class JobsController < ApplicationController
 
   # GET /jobs/new
   def new
+    @jobtypes = ['Architecture_and_Engineering_Occupations',
+                 'Arts_Design_Entertainment_Sports_and_Media_Occupations',
+                 'Building_and_Grounds_Cleaning_and_Maintenance_Occupations',
+                 'Business_and_Financial_Operations_Occupations',
+                 'Community_and_Social_Services_Occupations',
+                 'Computer_and_Mathematical_Occupations',
+                 'Construction_and_Extraction_Occupations',
+                 'Education_Training_and_Library_Occupations',
+                 'Farming_Fishing_and_Forestry_Occupations',
+                 'Food_Preparation_and_Serving_Related_Occupations',
+                 'Healthcare_Practitioners_and_Technical_Occupations',
+                 'Healthcare_Support_Occupations',
+                 'Installation_Maintenance_and_Repair_Occupations',
+                 'Legal_Occupations',
+                 'Life_Physical_and_Social_Science_Occupations',
+                 'Management_Occupations',
+                 'Military_Specific_Occupations',
+                 'Office_and_Administrative_Support_Occupations',
+                 'Personal_Care_and_Service_Occupations',
+                 'Production_Occupations',
+                 'Protective_Service_Occupations',
+                 'Sales_and_Related_Occupations'
+    ]
     @company = Company.find(params[:company_id])
     @job = Job.new
   end

@@ -35,11 +35,11 @@
 
   <span class="input"></span>
   Job Interests:
-
-  <div id="jobtypes_row" class="row">
-    <% jobtypes = User.jobtypes.keys.to_a %>
-    <% jobtypes.each do |jobtype| %>
-      <%= form.check_box :jobtype, { multiple: true }, User.jobtypes.select{ |v| v == jobtype}.values.first, nil %>
+  <%= form.label :jobs_id %>
+  <%= form.select :jobs_id, Job.ids%>
+  <div id="jobtypes_row" class="row">                                                 
+    <% @jobtypes.each do |jobtype| %>
+      <%= form.check_box :jobtype, { multiple: true }, jobtype, nil %>
       <%= form.label jobtype %>
     <% end %>
   </div>

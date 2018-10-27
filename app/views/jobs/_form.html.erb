@@ -18,10 +18,16 @@
   <span class="input"></span>
     <%= form.label :description %>
     <%= form.text_field :description %>
-
+  Jobtype:
   <span class="input"></span>
-    <%= form.label :company_id %>
-    <%= form.text_field :company_id %>
+  <div id="jobtypes_row" class="row">
+    <% @jobtypes.each do |jobtype| %>
+      <%= form.check_box :jobtype, { multiple: true, class: "jobtypes_class" }, jobtype, nil %>
+      <br>
+      <%= form.label jobtype %>
+    <% end %>
+  </div>
+
 
   <div class="actions">
     <%= form.submit %>
