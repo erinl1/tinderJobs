@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+    before_action :set_job, only: [:show, :edit, :update, :destroy]
   layout "usernew",  only: [:new, :edit]
   # GET /users
   # GET /users.json
@@ -15,6 +16,7 @@ class UsersController < ApplicationController
   end
   def match
     @user = User.find(params[:id])
+    @companies = Company.all
     #@jobs = Job.where(id: user.jobs_id)
   end
   # GET /users/new
