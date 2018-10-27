@@ -32,11 +32,11 @@
   <%= form.phone_field :phonenum %>
 
   <!--jobtypes -->
-  
+
   <span class="input"></span>
   Job Interests:
-  
-  <div id="jobtypes_row" class="row">                                                 
+
+  <div id="jobtypes_row" class="row">
     <% jobtypes = User.jobtypes.keys.to_a %>
     <% jobtypes.each do |jobtype| %>
       <%= form.check_box :jobtype, { multiple: true }, User.jobtypes.select{ |v| v == jobtype}.values.first, nil %>
@@ -44,7 +44,7 @@
     <% end %>
   </div>
 
-  
+
   <span class="input"></span>
   <%= form.label :resume %><br>
   <%= form.text_area :resume %>
