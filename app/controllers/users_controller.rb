@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  #layout "usernew",  only: [:new, :edit]
+  layout "usernew",  only: [:new, :edit]
   # GET /users
   # GET /users.json
   def index
@@ -13,10 +13,12 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     #@jobs = Job.where(id: user.jobs_id)
   end
+
   def match
     @user = User.find(params[:id])
     #@jobs = Job.where(id: user.jobs_id)
   end
+
   # GET /users/new
   def new
     @jobtypes = ['Architecture_and_Engineering_Occupations',
@@ -49,12 +51,11 @@ class UsersController < ApplicationController
   def edit
   end
 
-  def match
-  end
   # POST /users
   # POST /users.json
   def create
     @user = User.new(user_params)
+
     respond_to do |format|
       if @user.save
         format.html { redirect_to @user, notice: 'User was successfully created.' }
