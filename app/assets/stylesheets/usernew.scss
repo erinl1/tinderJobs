@@ -28,7 +28,7 @@
   content: "\3e";
 }
 
-body, input {
+body, input:not(.jobtypes_class) {
   font-family: "Avenir Next", Avenir, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
 }
 
@@ -96,11 +96,11 @@ body {
     opacity: 1;
   }
 }
-#wrapper input:-webkit-autofill {
+#wrapper input:-webkit-autofill:not(.jobtypes_class) {
   -webkit-box-shadow: 0 0 0px 1000px white inset;
 }
 
-#wrapper  input {
+#wrapper  input:not(.jobtypes_class) {
   color: #444;
   font-size: 1.5em;
   outline: none;
@@ -126,7 +126,7 @@ body {
   transition: border .25s;
 }
 
-#wrapper  input:focus {
+#wrapper  input:focus:not(.jobtypes_class) {
   color: #111;
   border-color: #444;
 }
@@ -170,7 +170,7 @@ body {
   transition: color .2s;
 }
 
-#wrapper ::-webkit-input-placeholder {
+#wrapper ::-webkit-input-placeholder:not(.jobtypes_class) {
   color: #999;
   -webkit-transition: color .2s;
   -moz-transition: color .2s;
@@ -186,7 +186,7 @@ body {
   transition: color .2s;
 }
 
-#wrapper :-ms-input-placeholder {
+#wrapper :-ms-input-placeholder:not(.jobtypes_class) {
   color: #999;
   -webkit-transition: color .2s;
   -moz-transition: color .2s;
@@ -198,15 +198,15 @@ body {
   color: #ddd;
 }
 
-#wrapper input:focus::-webkit-input-placeholder {
+#wrapper input:focus::-webkit-input-placeholder:not(.jobtypes_class) {
   color: #ddd;
 }
 
-#wrapper input:focus::-moz-input-placeholder {
+#wrapper input:focus::-moz-input-placeholder:not(.jobtypes_class) {
   color: #ddd;
 }
 
-#wrapper input:focus::-ms-input-placeholder {
+#wrapper input:focus::-ms-input-placeholder:not(.jobtypes_class) {
   color: #ddd;
 }
 
