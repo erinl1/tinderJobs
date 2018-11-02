@@ -8,7 +8,7 @@
   <div class="col-sm-6 col-xs-12">
   </div>
 </div>
-
+<% if false %>
 <% @user.jobtype.each do |jobt| %>
   <p>
   <% job = Job.where(jobtype: jobt) %>
@@ -36,8 +36,7 @@
   <% end %>
     </p>
 <% end %>
-<% if false %>
-
+<% end %>
 <table class="table">
   <thead>
     <tr>
@@ -58,4 +57,3 @@
     <% end %>
   </tbody>
 </table>
-<% end %>

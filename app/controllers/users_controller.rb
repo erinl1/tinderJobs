@@ -21,11 +21,8 @@ class UsersController < ApplicationController
   end
 
   def match
-<<<<<<< HEAD
     @companies = Company.all
-=======
     @user = User.find(params[:user_id])
->>>>>>> 9108c620381130693b4c8ae7af687015cc984d5d
     #@jobs = Job.where(id: user.jobs_id)
   end
 

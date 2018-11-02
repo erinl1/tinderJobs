@@ -1,10 +1,6 @@
 class JobsController < ApplicationController
   before_action :set_job, only: [:show, :edit, :update, :destroy]
-<<<<<<< HEAD
-  layout "jobsnew",  only: [:new, :edit]
-=======
-    layout "jobnew",  only: [:new, :edit]
->>>>>>> 9108c620381130693b4c8ae7af687015cc984d5d
+  layout "jobnew",  only: [:new, :edit]
 
   # GET /jobs
   # GET /jobs.json
