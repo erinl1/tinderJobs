@@ -35,7 +35,9 @@
 </p>
 <p>
   <strong>JobTypes</strong>
-  <%= @user.jobtype %>
+  <% @user.jobtype.each do |jobtype| %>
+    <p><%= jobtype %></p>
+  <% end %>
 </p>
 <p>
   <strong>Resume:</strong>

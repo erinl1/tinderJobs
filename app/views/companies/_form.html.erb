@@ -11,19 +11,17 @@
     </div>
   <% end %>
 
-<span class="input"></span>
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-
+  <span class="input"></span>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
 
   <span class="input"></span>
-    <%= form.label :location %>
-    <%= form.text_field :location %>
+  <%= form.label :location %>
+  <%= form.text_field :location %>
 
-<span class="input"></span>
-    <%= form.label :jobs_id %><br>
-    <%= form.select :jobs_id, Job.ids%>
-
+  <span class="input"></span>
+  <%= form.label :website %>
+  <%= form.text_field :website %>
 
   <div class="actions">
     <%= form.submit %>

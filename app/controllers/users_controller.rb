@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   layout "usernew",  only: [:new, :edit]
+
+
   # GET /users
   # GET /users.json
   def index
@@ -14,41 +16,69 @@ class UsersController < ApplicationController
     #@jobs = Job.where(id: user.jobs_id)
   end
 
+  def splash
+    render :layout => "splash"
+  end
+
   def match
-    @user = User.find(params[:id])
-    #@jobs = Job.where(id: user.jobs_id)
+    @user = User.find(params[:user_id])
   end
 
   # GET /users/new
   def new
-    @jobtypes = ['Architecture_and_Engineering_Occupations',
-                  'Arts_Design_Entertainment_Sports_and_Media_Occupations',
-                  'Building_and_Grounds_Cleaning_and_Maintenance_Occupations',
-                  'Business_and_Financial_Operations_Occupations',
-                  'Community_and_Social_Services_Occupations',
-                  'Computer_and_Mathematical_Occupations',
-                  'Construction_and_Extraction_Occupations',
-                  'Education_Training_and_Library_Occupations',
-                  'Farming_Fishing_and_Forestry_Occupations',
-                  'Food_Preparation_and_Serving_Related_Occupations',
-                  'Healthcare_Practitioners_and_Technical_Occupations',
-                  'Healthcare_Support_Occupations',
-                  'Installation_Maintenance_and_Repair_Occupations',
-                  'Legal_Occupations',
-                  'Life_Physical_and_Social_Science_Occupations',
-                  'Management_Occupations',
-                  'Military_Specific_Occupations',
-                  'Office_and_Administrative_Support_Occupations',
-                  'Personal_Care_and_Service_Occupations',
-                  'Production_Occupations',
-                  'Protective_Service_Occupations',
-                  'Sales_and_Related_Occupations'
-              ]
+    @jobtypes = [
+      "Architecture and Engineering Occupations",
+      "Arts Design Entertainment Sports and Media Occupations",
+      "Building and Grounds Cleaning and Maintenance Occupations",
+      "Business and Financial Operations Occupations",
+      "Community and Social Services Occupations",
+      "Computer and Mathematical Occupations",
+      "Construction and Extraction Occupations",
+      "Education Training and Library Occupations",
+      "Farming Fishing and Forestry Occupations",
+      "Food Preparation and Serving Related Occupations",
+      "Healthcare Practitioners and Technical Occupations",
+      "Healthcare Support Occupations",
+      "Installation Maintenance and Repair Occupations",
+      "Legal Occupations",
+      "Life Physical and Social Science Occupations",
+      "Management Occupations",
+      "Military Specific Occupations",
+      "Office and Administrative Support Occupations",
+      "Personal Care and Service Occupations",
+      "Production Occupations",
+      "Protective Service Occupations",
+      "Sales and Related Occupations"
+    ]
     @user = User.new
   end
 
   # GET /users/1/edit
   def edit
+    @jobtypes = [
+        "Architecture and Engineering Occupations",
+        "Arts Design Entertainment Sports and Media Occupations",
+        "Building and Grounds Cleaning and Maintenance Occupations",
+        "Business and Financial Operations Occupations",
+        "Community and Social Services Occupations",
+        "Computer and Mathematical Occupations",
+        "Construction and Extraction Occupations",
+        "Education Training and Library Occupations",
+        "Farming Fishing and Forestry Occupations",
+        "Food Preparation and Serving Related Occupations",
+        "Healthcare Practitioners and Technical Occupations",
+        "Healthcare Support Occupations",
+        "Installation Maintenance and Repair Occupations",
+        "Legal Occupations",
+        "Life Physical and Social Science Occupations",
+        "Management Occupations",
+        "Military Specific Occupations",
+        "Office and Administrative Support Occupations",
+        "Personal Care and Service Occupations",
+        "Production Occupations",
+        "Protective Service Occupations",
+        "Sales and Related Occupations"
+    ]
   end
 
   # POST /users

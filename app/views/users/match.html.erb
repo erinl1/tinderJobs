@@ -1,1 +1,27 @@
-hello
+<% @user.jobtype.each do |jobt| %>
+  <p>
+  <% job = Job.where(jobtype: jobt) %>
+  For <%= jobt %>:
+    <p>
+  <% if job.empty? %>
+    There are no jobs for this
+  <% else %>
+    <% job.each do |j| %>
+      <p>
+        Name: <%= j.name %>
+      </p>
+      <p>
+        Description: <%= j.description %>
+      </p>
+        <% company = Company.find(j.company_id)  %>
+      <p>
+        Link: <%= link_to j.name, [company, j] %>
+      </p>
+      <p>
+        Company: <%= link_to company.name, company%>
+      </p>
+      <br>
+    <% end %>
+  <% end %>
+    </p>
+<% end %>
