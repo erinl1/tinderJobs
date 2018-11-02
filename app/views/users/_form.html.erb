@@ -4,9 +4,9 @@
       <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
       <ul>
-      <% user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
@@ -15,41 +15,43 @@
   <%= form.label :name %>
   <%= form.text_field :name %>
 
-  <span class="input"></span>
   <%= form.label :email %>
   <%= form.email_field :email %>
 
-  <span class="input"></span>
   <%= form.label :password %>
-  <%= form.text_field :password %>
+  <%= form.password_field :password %>
 
-  <span class="input"></span>
   <%= form.label :age %>
   <%= form.number_field :age %>
 
-  <span class="input"></span>
   <%= form.label :phonenum %>
   <%= form.phone_field :phonenum %>
 
-  <!--jobtypes -->
+  <div id="jobtypes_container">
+    <div class="row">
+      <% @jobtypes.each do |jobtype| %>
+        <% index = @jobtypes.index(jobtype) %>
+        <div class="col-xs-2 col-sm-2">
+          <div class="box border">
+            <% unique_id = "#{@jobtypes.index(jobtype)}#{jobtype}" %>
+            <%= form.check_box :jobtype, { multiple: true, id: unique_id, class: "jobtypes_class" }, jobtype, nil %>
+            <%= form.label jobtype, :for => unique_id %>
+          </div>
+        </div>
+        <% if (index + 1) % 6 == 0 %>
+          </div> <div class="row">
+        <% end %>
+      <% end %>
+      </div>
+    </div>
 
-  <span class="input"></span>
-  Job Interests:
-  <%= form.label :jobs_id %>
-  <%= form.select :jobs_id, Job.ids%>
-  <div id="jobtypes_row" class="row">                                                 
-    <% @jobtypes.each do |jobtype| %>
-      <%= form.check_box :jobtype, { multiple: true }, jobtype, nil %>
-      <%= form.label jobtype %>
-    <% end %>
-  </div>
 
 
-  <span class="input"></span>
-  <%= form.label :resume %><br>
-  <%= form.text_area :resume %>
+      <span class="input"></span>
+      <%= form.label :resume %><br>
+      <%= form.text_area :resume %>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+      <div class="actions">
+        <%= form.submit %>
+      </div>
 <% end %>

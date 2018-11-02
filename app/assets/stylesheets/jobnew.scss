@@ -32,10 +32,6 @@ body, input:not(.jobtypes_class) {
   font-family: "Avenir Next", Avenir, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
 }
 
-input {
-  position: center;
-}
-
 body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -43,10 +39,12 @@ body {
   color: #111;
 }
 
-#jobtypes_row {
+#jobtypes_row .col .box {
 
 }
+#jobtypes_row .col .box {
 
+}
 #wrapper a {
   color: #e74c3c;
   text-decoration: none;
@@ -63,12 +61,12 @@ body {
 
 #wrapper form {
   margin: 12% auto;
-  width: 21em;
+  width: 19em;
+  position: absolute;
   text-align: center;
-  position: relative;
-  -webkit-animation: moveDown .3s;
-  -moz-animation: moveDown .3s;
-  animation: moveDown .3s;
+  -webkit-animation: moveDown 3s;
+  -moz-animation: moveDown 2s;
+  animation: moveDown 5s;
   -webkit-animation-fill-mode: forwards;
   -moz-animation-fill-mode: forwards;
   animation-fill-mode: forwards;

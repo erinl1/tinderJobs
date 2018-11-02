@@ -1,4 +1,4 @@
-<div class = 'box'>
+<div class="form-group">
 <%= form_with(model: job, url: [@company, job], local: true) do |form| %>
   <% if job.errors.any? %>
     <div id="error_explanation">
@@ -11,23 +11,15 @@
       </ul>
     </div>
   <% end %>
-  <span class="input"></span>
-    <%= form.label :name %>
-    <%= form.text_field :name %>
 
-  <span class="input"></span>
-    <%= form.label :description %>
-    <%= form.text_field :description %>
-  Jobtype:
-  <span class="input"></span>
-  <div id="jobtypes_row" class="row">
-    <% @jobtypes.each do |jobtype| %>
-      <%= form.check_box :jobtype, { multiple: true, class: "jobtypes_class" }, jobtype, nil %>
-      <br>
-      <%= form.label jobtype %>
-    <% end %>
-  </div>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
 
+  <%= form.label :description %>
+  <%= form.text_field :description %>
+
+  <%= form.label :jobtype, "Select one jobtype this job pertains to:" %>
+  <%= form.select :jobtype, options_for_select(@jobtypes), {:class => "form-control"} %>
 
   <div class="actions">
     <%= form.submit %>

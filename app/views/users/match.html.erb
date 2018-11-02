@@ -1,3 +1,4 @@
+
 <div class="row starter top-xs border" style="background:#6BABF3; color: white">
   <div class="col-sm-6 col-xs-12">
     <div class="box">
@@ -7,6 +8,36 @@
   <div class="col-sm-6 col-xs-12">
   </div>
 </div>
+
+<% @user.jobtype.each do |jobt| %>
+  <p>
+  <% job = Job.where(jobtype: jobt) %>
+  For <%= jobt %>:
+    <p>
+  <% if job.empty? %>
+    There are no jobs for this
+  <% else %>
+    <% job.each do |j| %>
+      <p>
+        Name: <%= j.name %>
+      </p>
+      <p>
+        Description: <%= j.description %>
+      </p>
+        <% company = Company.find(j.company_id)  %>
+      <p>
+        Link: <%= link_to j.name, [company, j] %>
+      </p>
+      <p>
+        Company: <%= link_to company.name, company%>
+      </p>
+      <br>
+    <% end %>
+  <% end %>
+    </p>
+<% end %>
+<% if false %>
+
 <table class="table">
   <thead>
     <tr>
@@ -27,3 +58,4 @@
     <% end %>
   </tbody>
 </table>
+<% end %>
