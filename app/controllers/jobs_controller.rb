@@ -1,6 +1,6 @@
 class JobsController < ApplicationController
   before_action :set_job, only: [:show, :edit, :update, :destroy]
-    layout "usernew",  only: [:new, :edit]
+  layout "jobsnew",  only: [:new, :edit]
 
   # GET /jobs
   # GET /jobs.json
